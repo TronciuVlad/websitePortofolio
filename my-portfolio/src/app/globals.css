@@ -10,16 +10,90 @@
   }
 }
 
-html,
-body {
-  max-width: 100vw;
+/* Import Futura Font */
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/FuturaLT.woff') format('woff'),
+       url('/fonts/FuturaLT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/FuturaLT-Bold.woff') format('woff'),
+       url('/fonts/FuturaLT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Bold Italic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
+  font-family: 'Gill Sans', Arial, sans-serif;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,4 +113,44 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* globals.css */
+
+.Container {
+  position: relative;
+  z-index: 1; /* Ensure it is higher than -1 (blur) */
+}
+
+/* Container for both the video and the blur */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep it behind everything else */
+}
+
+/* Style for the video background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the whole background */
+  z-index: -2; /* Keep it behind the blur */
+}
+
+/* Blur overlay */
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Adjust the blur level */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay */
+  z-index: -1; /* Make sure it's between the video and content */
 }
