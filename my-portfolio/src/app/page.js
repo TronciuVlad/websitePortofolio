@@ -72,7 +72,17 @@ export default function Home() {
           <Typography variant="h5" component="p" gutterBottom>
             ML
           </Typography>
-          <Button variant="contained" color="primary" href="/projects">
+          <Button 
+            href="/projects"
+            sx={{ 
+              backgroundColor: 'rgba(0, 61, 255, 0.5)',  // 50% transparent #003dff
+              border: 'none',  // No border
+              color: 'white',  // White text
+              '&:hover': {
+                backgroundColor: 'rgba(0, 61, 255, 0.7)',  // Slightly darker on hover, still transparent
+              },
+            }}
+          >
             Explore My Projects
           </Button>
         </Box>

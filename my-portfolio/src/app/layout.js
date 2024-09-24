@@ -11,6 +11,44 @@ import CssBaseline from '@mui/material/CssBaseline';
 const theme = createTheme({
   typography: {
     fontFamily: "'Gill Sans', Arial, sans-serif",  // Set Gill Sans as the default font
+    allVariants: {
+      color: '#ffffff',  // Ensure all text in typography uses white color
+    },
+  },
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-root': {
+            color: '#ffffff', // Set input text color to white
+          },
+          '& .MuiInput-underline:before': {
+            borderBottomColor: '#ffffff', // White underline
+          },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#ffffff', // White border for outlined input
+            },
+            '&:hover fieldset': {
+              borderColor: '#ffffff', // White border on hover
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#ffffff', // White border when focused
+            },
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: '#ffffff', // Set label text color to white
+          '&.Mui-focused': {
+            color: '#ffffff', // Keep label white when focused
+          },
+        },
+      },
+    },
   },
 });
 

@@ -92,6 +92,7 @@ html, body {
 
 body {
   font-family: 'Gill Sans', Arial, sans-serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   color: var(--foreground);
   background: var(--background);
   -webkit-font-smoothing: antialiased;
@@ -115,42 +116,37 @@ a {
   }
 }
 
-/* globals.css */
-
 .Container {
   position: relative;
-  z-index: 1; /* Ensure it is higher than -1 (blur) */
+  z-index: 1;
 }
 
-/* Container for both the video and the blur */
 .background-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keep it behind everything else */
+  z-index: -1;
 }
 
-/* Style for the video background */
 .video-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the video covers the whole background */
-  z-index: -2; /* Keep it behind the blur */
+  object-fit: cover;
+  z-index: -2;
 }
 
-/* Blur overlay */
 .blur-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(10px); /* Adjust the blur level */
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay */
-  z-index: -1; /* Make sure it's between the video and content */
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
