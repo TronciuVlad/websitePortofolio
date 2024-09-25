@@ -7,12 +7,11 @@ import { Container } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-// Create a custom theme that uses Gill Sans as the default font
 const theme = createTheme({
   typography: {
-    fontFamily: "'Gill Sans', Arial, sans-serif",  // Set Gill Sans as the default font
+    fontFamily: "'Gill Sans', Arial, sans-serif",
     allVariants: {
-      color: '#ffffff',  // Ensure all text in typography uses white color
+      color: '#ffffff',
     },
   },
   components: {
@@ -20,20 +19,20 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiInputBase-root': {
-            color: '#ffffff', // Set input text color to white
+            color: '#ffffff',
           },
           '& .MuiInput-underline:before': {
-            borderBottomColor: '#ffffff', // White underline
+            borderBottomColor: '#ffffff',
           },
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
-              borderColor: '#ffffff', // White border for outlined input
+              borderColor: '#ffffff',
             },
             '&:hover fieldset': {
-              borderColor: '#ffffff', // White border on hover
+              borderColor: '#ffffff',
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#ffffff', // White border when focused
+              borderColor: '#ffffff',
             },
           },
         },
@@ -42,9 +41,9 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: '#ffffff', // Set label text color to white
+          color: '#ffffff',
           '&.Mui-focused': {
-            color: '#ffffff', // Keep label white when focused
+            color: '#ffffff',
           },
         },
       },
@@ -67,15 +66,11 @@ export default function RootLayout({ children }) {
         overflowX: 'hidden',
         overflowY: 'auto'
       }}>
-        {/* Blur and video background are now inside a div that goes behind everything */}
         <div className="background-container">
-          {/* Video background */}
           <video autoPlay muted loop className="video-background">
             <source src="/bg-5.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          {/* Blur overlay */}
           <div className="blur-overlay"></div>
         </div>
 
@@ -85,7 +80,6 @@ export default function RootLayout({ children }) {
           <Container component="main" sx={{ flex: '1 0 auto', position: 'relative', zIndex: 1 }}>
             {children}
           </Container>
-          {/* Footer remains above the blur */}
           <Footer />
         </ThemeProvider>
       </body>
