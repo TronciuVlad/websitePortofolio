@@ -32,7 +32,7 @@ export const projects = [
     descriptionShort: 'TBD',
     descriptionLong: 'TBD',
     link: '',
-    tags: ['Web Development', 'C Software Development'],
+    tags: ['Web Development', 'Miscellaneous'],
   },
   {
     name: 'Radare',
