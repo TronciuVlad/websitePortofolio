@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
-  const pathname = usePathname(); // Get the current path
+  const pathname = usePathname();
 
   return (
     <AppBar 
       position="static"
       sx={{ 
-        backgroundColor: 'transparent', // Transparent navbar
-        boxShadow: 'none',  // Remove default shadow
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
       }}
     >
       <Toolbar>
@@ -19,8 +19,8 @@ export default function Navbar() {
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center', 
-            flexGrow: 1, // Center the items
-            gap: 3, // Space between the buttons
+            flexGrow: 1,
+            gap: 3,
           }}
         >
           <Button 
@@ -28,7 +28,7 @@ export default function Navbar() {
             component={Link} 
             href="/" 
             sx={{
-              fontWeight: pathname === '/' ? 'bold' : 'normal', // Highlight the active page
+              fontWeight: pathname === '/' ? 'bold' : 'normal',
               borderBottom: pathname === '/' ? '2px solid white' : 'none',
             }}
           >

@@ -7,35 +7,33 @@ export default function Home() {
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        flexGrow: 1, // Ensure the content grows to fill available space
-        padding: '2rem 0',  // Optional padding
+        flexGrow: 1,
+        padding: '2rem 0',
       }}
     >
       <Box 
         sx={{ 
           display: 'grid', 
-          gridTemplateColumns: 'minmax(300px, 1.5fr) 2px 1.5fr',  // Make left side bigger while keeping line centered
+          gridTemplateColumns: 'minmax(300px, 1.5fr) 2px 1.5fr',
           alignItems: 'center', 
           justifyContent: 'center', 
           height: '75vh',
-          maxHeight: '75vh',  // Set the maximum height for the content
+          maxHeight: '75vh',
           width: '100vw'
         }}
       >
-        {/* Left side with the full image */}
         <Box 
           sx={{ 
-            backgroundImage: 'url(/me.png)',  // Reference to your image
-            backgroundPosition: 'left center',  // Show the left half of the image
-            backgroundSize: '150%',  // Double the size so only half is visible
+            backgroundImage: 'url(/me.png)',
+            backgroundPosition: 'left center',
+            backgroundSize: '150%',
             backgroundRepeat: 'no-repeat',
-            height: '100%',  // Ensure it takes up the full height
-            width: '100%',  // Takes up the full width of the left column
-            overflow: 'hidden',  // Ensure anything outside the box is hidden
+            height: '100%',
+            width: '100%',
+            overflow: 'hidden',
           }} 
         />
 
-        {/* Vertical line */}
         <Box 
           sx={{ 
             width: '2px', 
@@ -44,14 +42,13 @@ export default function Home() {
           }} 
         />
 
-        {/* Right side content */}
         <Box 
           sx={{ 
             display: 'flex', 
             flexDirection: 'column', 
             alignItems: 'flex-start', 
             justifyContent: 'center',
-            ml: 4,  // Optional spacing between line and content
+            ml: 4,
           }}
         >
           <Typography variant="h2" component="h1" gutterBottom>
@@ -75,11 +72,11 @@ export default function Home() {
           <Button 
             href="/projects"
             sx={{ 
-              backgroundColor: 'rgba(0, 61, 255, 0.5)',  // 50% transparent #003dff
-              border: 'none',  // No border
-              color: 'white',  // White text
+              backgroundColor: 'rgba(0, 61, 255, 0.5)',
+              border: 'none',
+              color: 'white',
               '&:hover': {
-                backgroundColor: 'rgba(0, 61, 255, 0.7)',  // Slightly darker on hover, still transparent
+                backgroundColor: 'rgba(0, 61, 255, 0.7)',
               },
             }}
           >

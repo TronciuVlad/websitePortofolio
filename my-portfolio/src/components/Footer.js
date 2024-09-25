@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Box 
       sx={{ 
-        bgcolor: 'transparent', // Make the background transparent
+        bgcolor: 'transparent',
         p: 2, 
         mt: 4, 
         textAlign: 'center' 
@@ -13,7 +13,7 @@ export default function Footer() {
       <Typography 
         variant="body2" 
         sx={{ 
-          color: 'rgba(255, 255, 255, 0.5)' // Set text to white with 50% opacity
+          color: 'rgba(255, 255, 255, 0.5)'
         }}
       >
         © 2024 Vlad Tronciu
