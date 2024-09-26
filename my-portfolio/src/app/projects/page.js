@@ -16,41 +16,90 @@ export default function Projects() {
 
   return (
     <>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 2 }}>
-        <Typography variant="h4" component="h2">
-          My Projects
-        </Typography>
-        <Button
-          variant="contained"
-          onClick={() => setShowShortVersion(!showShortVersion)}
-          sx={{
-            ml: 2, 
-            backgroundColor: 'rgba(0, 61, 255, 0.5)',
-            border: 'none',
-            color: 'white',
-            '&:hover': {
-              backgroundColor: 'rgba(0, 61, 255, 0.7)',
-            },
-          }}
-        >
-          {showShortVersion ? 'Show Long Descriptions' : 'Show Short Descriptions'}
-        </Button>
-      </Box>
+      <Box 
+  sx={{ 
+    position: 'relative',
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    mb: 2,
+    '@media (max-width: 800px)': {
+      flexDirection: 'column',
+    },
+  }}
+>
+  <Typography 
+    variant="h4" 
+    component="h2" 
+    sx={{ 
+      textAlign: 'center', 
+      flexGrow: 1 
+    }}
+  >
+    My Projects
+  </Typography>
+
+  <Button
+    variant="contained"
+    onClick={() => setShowShortVersion(!showShortVersion)}
+    sx={{
+      position: 'absolute',
+      right: 0, 
+      backgroundColor: 'rgba(0, 61, 255, 0.5)',
+      border: 'none',
+      color: 'white',
+      '&:hover': {
+        backgroundColor: 'rgba(0, 61, 255, 0.7)',
+      },
+      '@media (max-width: 800px)': {
+        position: 'static',
+        mt: 2,
+      },
+    }}
+  >
+    {showShortVersion ? 'Show Long Descriptions' : 'Show Short Descriptions'}
+  </Button>
+</Box>
+
+
+
 
       <TagFilter activeTags={activeTags} setActiveTags={setActiveTags} />
 
-      <Grid container spacing={4}>
-        {filteredProjects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <ProjectCard
-              name={project.name}
-              description={showShortVersion ? project.descriptionShort : project.descriptionLong}
-              link={project.link}
-              tags={project.tags}
-            />
-          </Grid>
-        ))}
-      </Grid>
+      <Grid 
+  container 
+  spacing={4} 
+  sx={{ 
+    justifyContent: 'center',
+    '@media (max-width: 600px)': {
+      justifyContent: 'center',
+    },
+  }}
+>
+  {filteredProjects.map((project, index) => (
+    <Grid 
+      item 
+      xs={12} sm={6} md={4} 
+      key={index} 
+      sx={{
+        display: 'flex', 
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
+      <Box sx={{ width: '100%', maxWidth: '350px' }}>
+        <ProjectCard
+          name={project.name}
+          description={showShortVersion ? project.descriptionShort : project.descriptionLong}
+          link={project.link}
+          tags={project.tags}
+        />
+      </Box>
+    </Grid>
+  ))}
+</Grid>
+
+
     </>
   );
 }
