@@ -22,7 +22,7 @@ export default function Navbar() {
             flexGrow: 1,
             gap: 3,
             '@media (max-width: 600px)': {
-              gap: 1, // Reduce gap between buttons on small screens
+              gap: 1,
             },
           }}
         >
@@ -34,8 +34,8 @@ export default function Navbar() {
               fontWeight: pathname === '/' ? 'bold' : 'normal',
               borderBottom: pathname === '/' ? '2px solid white' : 'none',
               '@media (max-width: 600px)': {
-                fontSize: '0.8rem', // Reduce font size for small screens
-                padding: '4px 8px', // Reduce button padding for small screens
+                fontSize: '0.8rem',
+                padding: '4px 8px',
               },
             }}
           >
@@ -49,8 +49,8 @@ export default function Navbar() {
               fontWeight: pathname === '/projects' ? 'bold' : 'normal',
               borderBottom: pathname === '/projects' ? '2px solid white' : 'none',
               '@media (max-width: 600px)': {
-                fontSize: '0.8rem', // Reduce font size for small screens
-                padding: '4px 8px', // Reduce button padding for small screens
+                fontSize: '0.8rem',
+                padding: '4px 8px',
               },
             }}
           >
