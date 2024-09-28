@@ -21,6 +21,9 @@ export default function Navbar() {
             alignItems: 'center', 
             flexGrow: 1,
             gap: 3,
+            '@media (max-width: 600px)': {
+              gap: 1, // Reduce gap between buttons on small screens
+            },
           }}
         >
           <Button 
@@ -30,6 +33,10 @@ export default function Navbar() {
             sx={{
               fontWeight: pathname === '/' ? 'bold' : 'normal',
               borderBottom: pathname === '/' ? '2px solid white' : 'none',
+              '@media (max-width: 600px)': {
+                fontSize: '0.8rem', // Reduce font size for small screens
+                padding: '4px 8px', // Reduce button padding for small screens
+              },
             }}
           >
             Home
@@ -41,6 +48,10 @@ export default function Navbar() {
             sx={{
               fontWeight: pathname === '/projects' ? 'bold' : 'normal',
               borderBottom: pathname === '/projects' ? '2px solid white' : 'none',
+              '@media (max-width: 600px)': {
+                fontSize: '0.8rem', // Reduce font size for small screens
+                padding: '4px 8px', // Reduce button padding for small screens
+              },
             }}
           >
             Projects
@@ -52,6 +63,10 @@ export default function Navbar() {
             sx={{
               fontWeight: pathname === '/about' ? 'bold' : 'normal',
               borderBottom: pathname === '/about' ? '2px solid white' : 'none',
+              '@media (max-width: 600px)': {
+                fontSize: '0.8rem',
+                padding: '4px 8px',
+              },
             }}
           >
             About
@@ -63,6 +78,10 @@ export default function Navbar() {
             sx={{
               fontWeight: pathname === '/contact' ? 'bold' : 'normal',
               borderBottom: pathname === '/contact' ? '2px solid white' : 'none',
+              '@media (max-width: 600px)': {
+                fontSize: '0.8rem',
+                padding: '4px 8px',
+              },
             }}
           >
             Contact
